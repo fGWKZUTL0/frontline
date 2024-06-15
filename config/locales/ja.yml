@@ -1,0 +1,59 @@
+ja:
+  activerecord:
+    models:
+      # view側： User.model_name.human => "ユーザ" / t("activerecord.models.user")と同じ
+      user: ユーザー
+      user_model: ユーザー関連情報
+      doctor: 医師
+      nurse: 看護師
+    # model毎に定義したいattributesを記述
+    attributes:
+      user:
+        id: ID
+        # view側： User.human_attribute_name :name => "名前" /　t("activerecord.attributes.user.name")と同じ
+        first_name: 名前
+        family_name: 苗字
+        email: メールアドレス
+        password: パスワード
+  # 全てのmodelで共通して使用するattributesを定義
+  attributes:
+    created_at: 作成日
+    updated_at: 更新日
+  errors:
+    format: "%{message}"
+    messages: &errors_messages
+      inclusion: "%{attribute}が正しくありません"
+      exclusion: "%{attribute}は正しくありません"
+      invalid: "%{attribute}が正しくありません"
+      confirmation: "%{attribute}が一致しません"
+      accepted: "%{attribute}をチェックしてください"
+      empty: "%{attribute}を入力してください"
+      blank: "%{attribute}を入力してください"
+      required: "%{attribute}を入力してください"
+      too_long: "%{attribute}は%{count}文字以内で入力してください"
+      too_short: "%{attribute}は%{count}文字以上で入力してください"
+      wrong_length: "%{attribute}は%{count}文字で入力してください"
+      not_a_number: "%{attribute}は数値で入力してください"
+      not_an_integer: "%{attribute}は整数で入力してください"
+      greater_than: "%{attribute}は%{count}より大きい値を入力してください"
+      greater_than_or_equal_to: "%{attribute}は%{count}以上の値を入力してください"
+      equal_to: "%{attribute}は%{count}にしてください"
+      less_than: "%{attribute}は%{count}より小さい値にしてください"
+      less_than_or_equal_to: "%{attribute}は%{count}以下の値にしてください"
+      odd: "%{attribute}は奇数を入力してください"
+      even: "%{attribute}は偶数を入力してください"
+      taken: "%{attribute}がすでに使用されています"
+      before: "%{attribute}は%{threshold}よりも前の%{type}を入力してください"
+      before_or_equal_to: "%{attribute}は%{threshold}以前の%{type}を入力してください"
+      after: "%{attribute}は%{threshold}よりも後の%{type}を入力してください"
+      after_or_equal_to: "%{attribute}は%{threshold}以降の%{type}を入力してください"
+      out_of_contract: "%{attribute}が契約期間外です"
+      file_size_exceed: "%{file_name}のファイルサイズが大きすぎます"
+      file_type_invalid: "アップロードできないファイル形式です"
+      file_name_too_long: "ファイル名が長すぎます、%{count}文字以内の名称のファイルを指定してください"
+      access_forbidden: "指定された情報にアクセスする権限がありません"
+      pixel_size_too_large: "画像ファイルの大きさは %{width} × %{height} ピクセル以内にしてください"
+      invalid_chars: "%{attribute}に使用できない文字が含まれています（%{chars}）"
+      in_between: "の容量は%{min}以上%{max}以下にしてください"
+      spoofed_media_type: "%{attribute}の拡張子と内容が一致していません"
+      not_saved: "保存に失敗しました"

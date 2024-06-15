@@ -11,9 +11,9 @@ class HospitalsController < ApplicationController
   end
 
   # GET /hospitals/new
-  def newF
+  def new
     @hospital = Hospital.new
-  endF
+  end
 
   # GET /hospitals/1/edit
   def edit

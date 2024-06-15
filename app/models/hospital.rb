@@ -8,4 +8,5 @@
 #  updated_at :datetime         not null
 #
 class Hospital < ApplicationRecord
+  has_many :users, dependent: :destroy
 end
