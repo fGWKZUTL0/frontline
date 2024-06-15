@@ -19,8 +19,13 @@ class Nurse < ApplicationRecord
   include UserModelModule
 
   belongs_to :position, class_name: 'Service', inverse_of: :nurses
+  has_many :patients, dependent: :restrict_with_error
 
   def name
-    "#{self.user.family_name} #{self.user.first_name} (#{position.name})"
+    if self.user.nil?
+      return "未登録"
+    else
+      "#{self.user.family_name} #{self.user.first_name} (#{position.name})"
+    end
   end
 end

@@ -4,7 +4,7 @@ class PatientsController < ApplicationController
 
   # GET /patients or /patients.json
   def index
-    @patients = Patient.all
+    @patients = Patient.all.preload(doctor: [:user, :position], nurse: [:user, :position])
   end
 
   # GET /patients/1 or /patients/1.json
@@ -70,7 +70,7 @@ class PatientsController < ApplicationController
     end
 
     def build_labels
-      @doctors = User.doctors
-      @nurses = User.nurses
+      @doctors = Doctor.all.preload(:user, :position)
+      @nurses = Nurse.all.preload(:user, :position)
     end
 end

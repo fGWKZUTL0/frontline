@@ -75,7 +75,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_15_082621) do
 
   add_foreign_key "doctors", "services", column: "position_id"
   add_foreign_key "nurses", "services", column: "position_id"
-  add_foreign_key "patients", "users", column: "doctor_id"
-  add_foreign_key "patients", "users", column: "nurse_id"
   add_foreign_key "users", "hospitals"
 end
