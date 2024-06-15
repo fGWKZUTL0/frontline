@@ -6,9 +6,9 @@ class ApplicationController < ActionController::Base
 
   protected
     def set_hospital_as_tenant
-      hospital = Hospital.find(current_user.tenant_id)
-      set_current_tenant(hospital)
-      TenantLevelSecurity.current_tenant_id { hospital.id }
+      @hospital = Hospital.find(current_user.tenant_id)
+      set_current_tenant(@hospital)
+      TenantLevelSecurity.current_tenant_id { @hospital.id }
     end
 
     def layout_by_resource

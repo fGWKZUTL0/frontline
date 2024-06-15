@@ -24,7 +24,9 @@
 #
 class MedicalRecord < ApplicationRecord
   belongs_to :patient
-  belongs_to :user
+  belongs_to :writer, class_name: 'User'
   belongs_to :hospital, foreign_key: :tenant_id
   multi_tenant :tenant
+
+  validates :writing_date, presence: true
 end

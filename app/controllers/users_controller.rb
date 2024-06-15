@@ -23,22 +23,26 @@ class UsersController < ApplicationController
 
   # POST /users or /users.json
   def create
-    @user = User.new(user_params)
-    @user.hospital = current_user.hospital
+    MultiTenant.with(@hospital) do
+      @user = User.new(user_params)
+      @user.hospital = current_user.hospital
 
-    if @user.save
-      redirect_to users_path, notice: "User was successfully created."
-    else
-      render :new, status: :unprocessable_entity
+      if @user.save
+        redirect_to users_path, notice: "User was successfully created."
+      else
+        render :new, status: :unprocessable_entity
+      end
     end
   end
 
   # PATCH/PUT /users/1 or /users/1.json
   def update
-    if @user.update(user_params)
-      redirect_to users_path, notice: "User was successfully updated."
-    else
-      render :edit, status: :unprocessable_entity
+    MultiTenant.with(@hospital) do
+      if @user.update(user_params)
+        redirect_to users_path, notice: "User was successfully updated."
+      else
+        render :edit, status: :unprocessable_entity
+      end
     end
   end
 

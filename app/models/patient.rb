@@ -27,4 +27,9 @@ class Patient < ApplicationRecord
   belongs_to :nurse
   belongs_to :hospital, foreign_key: :tenant_id
   multi_tenant :tenant
+  has_many :medical_records, dependent: :destroy
+
+  def name
+    "#{family_name} #{first_name}"
+  end
 end

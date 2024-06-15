@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
-  resources :medical_records
   devise_for :users, controllers: { 
     registrations: "users/registrations"
   }, path: "account"
 
-  resources :patients
+  resources :patients do
+    resources :medical_records, controller: "patients/medical_records"
+  end
+  resources :medical_records, only: %i[index]
   resource :hospital
   resources :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
