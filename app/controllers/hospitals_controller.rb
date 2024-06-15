@@ -6,7 +6,7 @@ class HospitalsController < ApplicationController
     @hospitals = Hospital.all
   end
 
-  # GET /hospitals/1 or /hospitals/1.json
+  # GET /hospital or /hospital.json
   def show
   end
 
@@ -60,7 +60,7 @@ class HospitalsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_hospital
-      @hospital = Hospital.find(params[:id])
+      @hospital = current_user.hospital
     end
 
     # Only allow a list of trusted parameters through.
