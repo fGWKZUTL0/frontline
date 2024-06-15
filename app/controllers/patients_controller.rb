@@ -1,5 +1,6 @@
 class PatientsController < ApplicationController
   before_action :set_patient, only: %i[ show edit update destroy ]
+  before_action :build_labels, only: %i[ new create edit update ]
 
   # GET /patients or /patients.json
   def index
@@ -65,6 +66,11 @@ class PatientsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def patient_params
-      params.require(:patient).permit(:family_name, :first_name, :born_date)
+      params.require(:patient).permit(:family_name, :first_name, :born_date, :doctor_id, :nurse_id)
+    end
+
+    def build_labels
+      @doctors = User.doctors
+      @nurses = User.nurses
     end
 end

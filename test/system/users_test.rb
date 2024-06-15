@@ -16,7 +16,6 @@ class UsersTest < ApplicationSystemTestCase
 
     fill_in "Family name", with: @user.family_name
     fill_in "First name", with: @user.first_name
-    fill_in "–parent=hospital", with: @user.–parent=Hospital
     click_on "Create User"
 
     assert_text "User was successfully created"
@@ -29,7 +28,6 @@ class UsersTest < ApplicationSystemTestCase
 
     fill_in "Family name", with: @user.family_name
     fill_in "First name", with: @user.first_name
-    fill_in "–parent=hospital", with: @user.–parent=Hospital
     click_on "Update User"
 
     assert_text "User was successfully updated"

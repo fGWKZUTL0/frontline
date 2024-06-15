@@ -38,6 +38,9 @@ class User < ApplicationRecord
   DELEGATED_TYPES = %w(Doctor Nurse)
   delegated_type :user_model, types: DELEGATED_TYPES, dependent: :destroy
   accepts_nested_attributes_for :user_model
+  delegate :name, to: :user_model
+
+  validates :email, presence: true, uniqueness: true
 
   def self.user_model_delegated_type_options
     DELEGATED_TYPES.map do |type|

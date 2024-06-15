@@ -31,9 +31,7 @@
 one:
   family_name: MyString
   first_name: MyString
-  –parent=Hospital: MyString
 
 two:
   family_name: MyString
   first_name: MyString
-  –parent=Hospital: MyString

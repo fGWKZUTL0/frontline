@@ -57,3 +57,4 @@ ja:
       in_between: "の容量は%{min}以上%{max}以下にしてください"
       spoofed_media_type: "%{attribute}の拡張子と内容が一致していません"
       not_saved: "保存に失敗しました"
+      record_invalid: "入力内容に誤りがあります"
