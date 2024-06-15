@@ -9,4 +9,19 @@
     <%= user.first_name %>
   </p>
 
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Email:</strong>
+    <%= user.email %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Position:</strong>
+    <%= t "activerecord.models.#{user.user_model_type.underscore}" %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Position:</strong>
+    <%= user.user_model.position.name %>
+  </p>
+
 </div>

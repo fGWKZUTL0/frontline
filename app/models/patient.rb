@@ -22,4 +22,6 @@
 #  fk_rails_...  (nurse_id => users.id)
 #
 class Patient < ApplicationRecord
+  belongs_to :doctor, class_name: 'User', inverse_of: :users
+  belongs_to :nurse, class_name: 'User', inverse_of: :users
 end

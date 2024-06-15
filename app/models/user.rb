@@ -31,7 +31,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable
 
   belongs_to :hospital
   accepts_nested_attributes_for :hospital
@@ -40,6 +40,9 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :user_model
   delegate :name, to: :user_model
 
+  attribute :password, default: -> { Devise::Encryptor.digest(::User, SecureRandom.urlsafe_base64) }
+
+  validates :family_name, :first_name, presence: true
   validates :email, presence: true, uniqueness: true
 
   def self.user_model_delegated_type_options
