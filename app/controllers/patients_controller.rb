@@ -70,7 +70,7 @@ class PatientsController < ApplicationController
     end
 
     def build_labels
-      @doctors = Doctor.all.preload(:user, :position)
-      @nurses = Nurse.all.preload(:user, :position)
+      @doctors = Doctor.joins(:user).preload(:user)
+      @nurses = Nurse.joins(:user).preload(:user)
     end
 end
