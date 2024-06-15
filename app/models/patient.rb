@@ -9,22 +9,22 @@
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  doctor_id   :bigint           not null
-#  hospital_id :bigint           default(3), not null
 #  nurse_id    :bigint           not null
+#  tenant_id   :bigint           default(3), not null
 #
 # Indexes
 #
-#  index_patients_on_doctor_id    (doctor_id)
-#  index_patients_on_hospital_id  (hospital_id)
-#  index_patients_on_nurse_id     (nurse_id)
+#  index_patients_on_doctor_id  (doctor_id)
+#  index_patients_on_nurse_id   (nurse_id)
+#  index_patients_on_tenant_id  (tenant_id)
 #
 # Foreign Keys
 #
-#  fk_rails_...  (hospital_id => hospitals.id)
+#  fk_rails_...  (tenant_id => hospitals.id)
 #
 class Patient < ApplicationRecord
   belongs_to :doctor
   belongs_to :nurse
-  belongs_to :hospital
-  multi_tenant :hospital
+  belongs_to :hospital, foreign_key: :tenant_id
+  multi_tenant :tenant
 end

@@ -13,19 +13,19 @@
 #  user_model_type        :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
-#  hospital_id            :bigint           not null
+#  tenant_id              :bigint           not null
 #  user_model_id          :bigint           not null
 #
 # Indexes
 #
 #  index_users_on_email                 (email) UNIQUE
-#  index_users_on_hospital_id           (hospital_id)
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
+#  index_users_on_tenant_id             (tenant_id)
 #  index_users_on_user_model_id         (user_model_id)
 #
 # Foreign Keys
 #
-#  fk_rails_...  (hospital_id => hospitals.id)
+#  fk_rails_...  (tenant_id => hospitals.id)
 #
 require "test_helper"
 

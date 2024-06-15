@@ -10,4 +10,5 @@
 class Hospital < ApplicationRecord
   has_many :users, dependent: :destroy
   has_many :patients, dependent: :destroy
+  has_many :medical_records, dependent: :destroy
 end

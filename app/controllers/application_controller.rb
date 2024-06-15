@@ -4,12 +4,12 @@ class ApplicationController < ActionController::Base
   set_current_tenant_through_filter
   before_action :set_hospital_as_tenant, unless: :devise_controller?
 
-  def set_hospital_as_tenant
-    hospital = Hospital.find(current_user.hospital_id)
-    set_current_tenant(hospital)
-  end
-
   protected
+    def set_hospital_as_tenant
+      hospital = Hospital.find(current_user.tenant_id)
+      set_current_tenant(hospital)
+      TenantLevelSecurity.current_tenant_id { hospital.id }
+    end
 
     def layout_by_resource
       if devise_controller?
