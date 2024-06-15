@@ -34,6 +34,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable
 
   belongs_to :hospital
+  multi_tenant :hospital
   accepts_nested_attributes_for :hospital
   DELEGATED_TYPES = %w(Doctor Nurse)
   delegated_type :user_model, types: DELEGATED_TYPES, dependent: :destroy
