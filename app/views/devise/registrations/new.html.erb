@@ -11,6 +11,14 @@
 
   <h2 class="text-2xl">ユーザー情報</h2>
   <div class="field">
+    <%= f.label :family_name, "苗字" %><br />
+    <%= f.text_field :family_name %>
+  </div>
+  <div class="field">
+    <%= f.label :first_name, "名前" %><br />
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
     <%= f.label :user_model_type, "職種" %><br />
     <%= f.select :user_model_type, ::User.user_model_delegated_type_options %>
   </div>
