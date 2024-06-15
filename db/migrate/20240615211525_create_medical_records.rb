@@ -1,6 +1,6 @@
 class CreateMedicalRecords < ActiveRecord::Migration[7.1]
   def change
-    create_table :medical_records do |t|
+    create_table :medical_records, id: :uuid do |t|
       t.references :hospital, null: false, foreign_key: true
       t.references :patient, null: false, foreign_key: true
       t.date :writing_date

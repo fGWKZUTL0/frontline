@@ -2,7 +2,7 @@
 #
 # Table name: medical_records
 #
-#  id           :bigint           not null, primary key
+#  id           :uuid             not null, primary key
 #  writing_date :date
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
