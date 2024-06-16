@@ -3,7 +3,7 @@
 <%= render @medical_record %>
 
 <div>
-  <%= link_to "Edit this medical record", edit_patient_medical_record_path(@medical_record) %> |
+  <%= link_to "Edit this medical record", edit_patient_medical_record_path(@medical_record.patient, @medical_record) %> |
   <%= link_to "Back to medical records", medical_records_path %>
 
   <%= button_to "Destroy this medical record", patient_medical_record_path(@medical_record.patient.id, @medical_record.id), method: :delete %>

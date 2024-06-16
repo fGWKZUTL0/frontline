@@ -28,5 +28,7 @@ class MedicalRecord < ApplicationRecord
   belongs_to :hospital, foreign_key: :tenant_id
   multi_tenant :tenant
 
-  validates :writing_date, presence: true
+  validates :writing_date, :content, presence: true
+
+  has_rich_text :content
 end

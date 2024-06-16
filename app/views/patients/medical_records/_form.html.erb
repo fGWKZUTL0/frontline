@@ -15,6 +15,11 @@
     <%= form.label :writing_date, style: "display: block" %>
     <%= form.date_field :writing_date %>
   </div>
+
+   <div class="mb-3">
+    <%= form.label :content, "詳細" %>
+    <%= form.rich_text_area :content %>
+  </div>
   
   <div class="inline">
     <%= form.submit class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>

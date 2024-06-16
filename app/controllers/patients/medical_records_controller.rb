@@ -67,7 +67,7 @@ module Patients
 
       # Only allow a list of trusted parameters through.
       def medical_record_params
-        params.require(:medical_record).permit(:writing_date)
+        params.require(:medical_record).permit(:writing_date, :content)
       end
   end
 end
