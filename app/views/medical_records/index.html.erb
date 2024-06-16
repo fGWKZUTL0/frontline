@@ -2,11 +2,8 @@
 
 <h1>Medical records</h1>
 
-<div id="medical_records">
+<div id="medical_records" class="grid grid-cols-1 sm:grid-cols-3 gap-2">
   <% @medical_records.each do |medical_record| %>
     <%= render medical_record %>
-    <p>
-      <%= link_to "Show this medical record", patient_medical_record_path(medical_record.patient.id, medical_record.id) %>
-    </p>
   <% end %>
 </div>

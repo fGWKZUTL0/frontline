@@ -1,17 +1,27 @@
-<div id="<%= dom_id medical_record %>">
-  <p>
-    <strong>Patient:</strong>
-    <%= medical_record.patient.name %>
-  </p>
+<div id="<%= dom_id medical_record %>" class="p-2 col-span-1">
+  <div>
+    <p class="py-1">
+      <strong>Title:</strong>
+      <%= medical_record.title %>
+    </p>
 
-  <p>
-    <strong>Writing date:</strong>
-    <%= medical_record.writing_date %>
-  </p>
+    <p class="py-1">
+      <strong>Patient:</strong>
+      <%= medical_record.patient.name %>
+    </p>
 
-  <p>
-    <strong>Writer:</strong>
-    <%= medical_record.writer.name %>
-  </p>
+    <p class="py-1">
+      <strong>Writing date:</strong>
+      <%= medical_record.writing_date %>
+    </p>
 
+    <p class="py-1">
+      <strong>Writer:</strong>
+      <%= medical_record.writer.name %>
+    </p>
+
+    <p class="py-2">
+      <%= link_to "Show this medical record", patient_medical_record_path(medical_record.patient.id, medical_record.id) %>
+    </p>
+  </div>
 </div>

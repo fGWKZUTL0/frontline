@@ -2,7 +2,7 @@
 #
 # Table name: medical_records
 #
-#  id         :uuid             not null, primary key
+#  id         :bigint           not null, primary key
 #  title      :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
@@ -28,11 +28,11 @@ class MedicalRecord < ApplicationRecord
   belongs_to :hospital, foreign_key: :tenant_id
   multi_tenant :tenant
 
-  validates :title, :writing_date, :content, presence: true
+  validates :title, :content, presence: true
 
   has_rich_text :content
 
   def writing_date
-    I18n.l created_at
+    I18n.l created_at unless created_at.nil?
   end
 end
