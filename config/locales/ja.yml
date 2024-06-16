@@ -58,3 +58,6 @@ ja:
       spoofed_media_type: "%{attribute}の拡張子と内容が一致していません"
       not_saved: "保存に失敗しました"
       record_invalid: "入力内容に誤りがあります"
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"

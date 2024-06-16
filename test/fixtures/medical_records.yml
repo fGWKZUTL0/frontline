@@ -2,13 +2,13 @@
 #
 # Table name: medical_records
 #
-#  id           :uuid             not null, primary key
-#  writing_date :date
-#  created_at   :datetime         not null
-#  updated_at   :datetime         not null
-#  patient_id   :bigint           not null
-#  tenant_id    :bigint           not null
-#  writer_id    :bigint           not null
+#  id         :uuid             not null, primary key
+#  title      :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  patient_id :bigint           not null
+#  tenant_id  :bigint           not null
+#  writer_id  :bigint           not null
 #
 # Indexes
 #

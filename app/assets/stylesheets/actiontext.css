@@ -41,3 +41,13 @@
 .trix-content ol {
   list-style: decimal;
 }
+
+.trix-content a {
+  color: blue; /* リンクのテキストカラーを青に設定 */
+  /* リンクのテキストに下線を追加 */
+}
+
+/* ホバー時のスタイル */
+.trix-content a:hover {
+  text-decoration: underline;
+}

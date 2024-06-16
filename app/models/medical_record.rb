@@ -2,13 +2,13 @@
 #
 # Table name: medical_records
 #
-#  id           :uuid             not null, primary key
-#  writing_date :date
-#  created_at   :datetime         not null
-#  updated_at   :datetime         not null
-#  patient_id   :bigint           not null
-#  tenant_id    :bigint           not null
-#  writer_id    :bigint           not null
+#  id         :uuid             not null, primary key
+#  title      :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  patient_id :bigint           not null
+#  tenant_id  :bigint           not null
+#  writer_id  :bigint           not null
 #
 # Indexes
 #
@@ -28,7 +28,11 @@ class MedicalRecord < ApplicationRecord
   belongs_to :hospital, foreign_key: :tenant_id
   multi_tenant :tenant
 
-  validates :writing_date, :content, presence: true
+  validates :title, :writing_date, :content, presence: true
 
   has_rich_text :content
+
+  def writing_date
+    I18n.l created_at
+  end
 end
