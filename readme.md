@@ -23,12 +23,14 @@
     - id
     - post（役職: 准看護師、看護師、師長）
 
-- medical_record
+- MedicalRecord
 
   - id
   - patient_id
   - writing_date
-  - report
+  - content
+
+  MedicalRecord には自動下書き保存機能も実装する予定
 
 - Patient(患者)
 

@@ -4,3 +4,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* 
+@layer components {
+  .loading-bar {
+    display: none;
+    width: 100%;
+  }
+
+  [aria-busy="true"] .loading-bar {
+    display: block;
+  }
+} */

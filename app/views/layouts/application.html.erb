@@ -19,7 +19,7 @@
 
     <div class="sm:ml-64 p-4">
       <main class="p-4 border-2 border-gray-200 border-dashed rounded-lg">
-        <%= turbo_frame_tag "main" do %>
+        <%= turbo_frame_tag "main", data: { turbo_action: :advance } do %>
           <%= yield %>
         <% end %>
       </main>
