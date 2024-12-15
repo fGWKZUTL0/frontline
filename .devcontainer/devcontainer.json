@@ -1,0 +1,17 @@
+{
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/app",
+  "postCreateCommand": "rm -f tmp/pids/server.pid && yarn install",
+  "overrideCommand": true,
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "castwide.solargraph", // solargraph
+        "rebornix.Ruby", // Rubyのシンタックスハイライトなど
+        "misogi.ruby-rubocop", // Rubocop
+        "KoichiSasada.vscode-rdbg" // Ruby Debug　後述
+      ]
+    }
+  }
+}
