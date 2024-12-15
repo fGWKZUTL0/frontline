@@ -1,6 +1,8 @@
 <div id="<%= dom_id user %>">
   <p class="my-5">
-    <%= image_tag(user.resume.preview(resize_to_limit: [400, 600])) if user.resume.present? %>
+    <%= link_to url_for(user.resume), target: :_blank, rel: "noopener noreferrer" do %>
+      <%= image_tag(user.resume.preview(resize_to_limit: [400, 600])) if user.resume.present? %>
+    <% end %>
   </p>
 
   <p class="my-5">

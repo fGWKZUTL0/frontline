@@ -73,4 +73,8 @@ Rails.application.configure do
   config.action_controller.raise_on_missing_callback_actions = true
 
   config.web_console.allowed_ips = '0.0.0.0/0'
+
+  config.active_storage.service = :local
+  default_url_options[:host] = "localhost"
+  default_url_options[:port] = 3000
 end
