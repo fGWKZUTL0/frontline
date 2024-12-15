@@ -41,6 +41,8 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :user_model
   delegate :name, to: :user_model
 
+  has_one_attached :avatar
+
   attribute :password, default: -> { Devise::Encryptor.digest(::User, SecureRandom.urlsafe_base64) }
 
   validates :family_name, :first_name, presence: true
