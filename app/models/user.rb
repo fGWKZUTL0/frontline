@@ -41,7 +41,7 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :user_model
   delegate :name, to: :user_model
 
-  has_one_attached :avatar
+  has_one_attached :resume
 
   attribute :password, default: -> { Devise::Encryptor.digest(::User, SecureRandom.urlsafe_base64) }
 

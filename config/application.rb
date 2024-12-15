@@ -25,5 +25,7 @@ module App
     # config.eager_load_paths << Rails.root.join("extras")
 
     config.i18n.default_locale = :ja
+
+    config.active_storage.previewers << ActiveStorage::Previewer::MuPDFPreviewer
   end
 end

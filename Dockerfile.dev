@@ -7,7 +7,7 @@ RUN apk add --no-cache \
     npm install -g yarn && \
     cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 
-RUN apk add --no-cache git build-base libxml2-dev libxslt-dev vips postgresql-dev postgresql-client tzdata bash vim && \
+RUN apk add --no-cache git build-base libxml2-dev libxslt-dev vips mupdf mupdf-tools postgresql-dev postgresql-client tzdata bash vim && \
     cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 
 ENV APP_ROOT /app
